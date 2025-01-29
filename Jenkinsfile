@@ -6,8 +6,8 @@ pipeline {
                 script {
                     def scriptPath = "Jenkinsfile-${env.BRANCH_NAME}"
                     echo "Loading ${scriptPath}"
-                    def pipelineScript = load(scriptPath)
-                    pipelineScript.DevPipeline()
+                    load(scriptPath)
+                    
                 }
             }
         }
