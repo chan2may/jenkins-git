@@ -1,12 +1,9 @@
-def DevPipeline() {
-    echo "Running pipeline Function"
+echo "Running pipeline Function"
 
-        stage('env.BRANCH_NAME') {
-            steps {
-                sh '''
-                    echo 'Pulling Branch ...' + env.BRANCH_NAME
-                '''
-            }
-        }
+stage('env.BRANCH_NAME') {
+    steps {
+        sh '''
+            echo 'Pulling Branch ...' + env.BRANCH_NAME
+        '''
+    }
 }
-
