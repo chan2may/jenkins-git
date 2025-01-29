@@ -1,13 +1,12 @@
-pipeline {
-    agent any
-    stages {
+def DevPipeline() {
+    echo "Running pipeline Function"
+
         stage('env.BRANCH_NAME') {
             steps {
-                sh 'echo "Hello World"'
                 sh '''
                     echo 'Pulling Branch ...' + env.BRANCH_NAME
                 '''
             }
         }
-    }
 }
+
