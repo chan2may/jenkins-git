@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('env.BRANCH_NAME') {
+            steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo 'Pulling Branch ...' + env.BRANCH_NAME
+                '''
+            }
+        }
+    }
+}
