@@ -1,9 +1,5 @@
 echo "Running pipeline Function"
 
-stage('env.BRANCH_NAME') {
-    steps {
-        sh '''
-            echo 'Pulling Branch ...' + env.BRANCH_NAME
-        '''
-    }
+stage('Dev Branch') {
+    echo 'Pulling Branch ...' + env.BRANCH_NAME
 }
