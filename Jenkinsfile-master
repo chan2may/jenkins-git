@@ -1,12 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('env.BRANCH_NAME') {
             steps {
                 sh 'echo "Hello World"'
                 sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
+                    echo 'Pulling Branch ...' + env.BRANCH_NAME
                 '''
             }
         }
