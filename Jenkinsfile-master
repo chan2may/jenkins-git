@@ -1,0 +1,5 @@
+echo "Running pipeline Function"
+
+stage('Master Branch') {
+    echo 'Pulling Branch ...' + env.BRANCH_NAME
+}

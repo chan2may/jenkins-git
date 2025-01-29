@@ -1,13 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Load Branch-Specific Jenkinsfile') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                script {
+                    def scriptPath = "Jenkinsfile-${env.BRANCH_NAME}"
+                    echo "Loading ${scriptPath}"
+                    load(scriptPath)
+                    
+                }
             }
         }
     }
